@@ -15,3 +15,7 @@ console.log(typeof isIsland);
 console.log(typeof country);
 console.log(typeof continent);
 console.log(typeof population);
+
+// LECTURE: let, const and var
+
+language = "bulgarian";
