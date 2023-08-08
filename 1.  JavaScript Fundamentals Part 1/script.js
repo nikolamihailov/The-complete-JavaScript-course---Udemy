@@ -19,7 +19,7 @@ if (js === "amazing") alert("Hello!");
 // statement - complete instruction that performs an action
 // expression - code construct that produces a value when evaluated
 
-//ternary oparetor best practice
+//ternary operator best practice
 const age = 18;
 const drink = age >= 18 ? "wine 🍷" : "milk 🥛";
 console.log(`I will drink ${drink}`);
