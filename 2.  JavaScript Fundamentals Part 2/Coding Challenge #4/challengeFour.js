@@ -12,6 +12,7 @@ for (let i = 0; i < bills.length; i++) {
 }
 
 console.log(tips, totals);
+
 // Bonus
 
 const calcAverge = function (arr) {
