@@ -13,8 +13,10 @@ let message = document.querySelector(".message");
 let magicNumber = Math.floor(Math.random() * 20) + 1;
 
 checkBtn.addEventListener("click", () => {
-    const guessNumber = Number(document.querySelector(".guess").value);
-    if (!guessNumber) return setMessage("No number ⛔!");
+    let guessNumber = document.querySelector(".guess").value;
+    if (guessNumber === "") return setMessage("No number ⛔!");
+    guessNumber = Number(guessNumber);
+    if (guessNumber < 1 || guessNumber > 20) return setMessage("Range 1-20 only ⛔!");
 
     if (guessNumber === magicNumber) {
         if (score > highscore) {
