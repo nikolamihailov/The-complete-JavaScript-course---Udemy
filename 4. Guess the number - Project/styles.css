@@ -7,7 +7,6 @@
 }
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
 }
 
@@ -20,6 +19,9 @@ body {
 
 /* LAYOUT */
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
@@ -34,26 +36,19 @@ main {
 }
 
 .left {
-  width: 52rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .right {
-  width: 52rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 /* ELEMENTS STYLE */
 h1 {
-  font-size: 4rem;
   text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .number {
@@ -61,7 +56,7 @@ h1 {
   color: #333;
   font-size: 6rem;
   width: 15rem;
-  padding: 3rem 0rem;
+  padding: 2rem 0rem;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -70,7 +65,7 @@ h1 {
 }
 
 .between {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -82,6 +77,9 @@ h1 {
   left: 2rem;
 }
 
+label {
+  margin-bottom: 10px;
+}
 .guess {
   background: none;
   border: 4px solid #eee;
@@ -89,7 +87,7 @@ h1 {
   color: inherit;
   font-size: 5rem;
   padding: 2.5rem;
-  width: 25rem;
+  width: 23rem;
   text-align: center;
   display: block;
   margin-bottom: 3rem;
@@ -101,8 +99,7 @@ h1 {
   color: #222;
   font-size: 2rem;
   font-family: inherit;
-  padding: 2rem 3rem;
-  cursor: pointer;
+  padding: 1.25rem 2rem;
 }
 
 .btn:hover {
@@ -116,4 +113,69 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .between {
+    font-size: 1rem;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+  .number {
+    font-size: 2.5rem;
+    padding: 1rem 0rem;
+  }
+  .btn {
+    font-size: 1.5rem;
+    padding: 1.25rem 1.75rem;
+  }
+  .guess {
+    font-size: 3rem;
+    padding: 2rem;
+    width: 14rem;
+    margin-bottom: 2rem;
+  }
+  .right {
+    font-size: 1.5rem;
+  }
+  .message {
+    margin-bottom: 5rem;
+    height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1rem;
+  }
+  .between {
+    font-size: 0.7rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .number {
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .guess {
+    font-size: 2rem;
+    padding: 1.25rem;
+    width: 7rem;
+    margin-bottom: 1.5rem;
+  }
+  .right {
+    font-size: 1rem;
+  }
+  .message {
+    margin-bottom: 3rem;
+    height: 1.5rem;
+  }
 }
