@@ -43,7 +43,7 @@ againBtn.addEventListener("click", () => {
     number.textContent = "?";
     score = 20;
     scoreEl.textContent = score;
-    setMessage("Start guessing");
+    setMessage("Start guessing...");
     document.body.style.backgroundColor = "#222";
     document.querySelector(".guess").value = "";
     magicNumber = Math.floor(Math.random() * 20) + 1;
