@@ -92,7 +92,7 @@ main {
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -101,7 +101,7 @@ main {
 }
 
 .score {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 300;
   color: #c7365f;
   margin-bottom: auto;
@@ -180,7 +180,7 @@ main {
 }*/
 
 .btn:active {
-  transform: translate(0px, -25%);
+  transform: translate(0px, -10%);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
@@ -234,7 +234,7 @@ main {
   }
   .player {
     flex: 50%;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,17 +243,12 @@ main {
 
   /* ELEMENTS */
   .name {
-    position: relative;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    font-weight: 300;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .score {
-    font-size: 6rem;
+    font-size: 4rem;
+    margin-bottom: 15px;
   }
 
   .current {
@@ -281,6 +276,10 @@ main {
     height: 4rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
   }
+  .rules {
+    width: 80%;
+    padding: 3rem;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -294,7 +293,7 @@ main {
   }
   .player {
     flex: 50%;
-    padding: 2rem;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,17 +302,11 @@ main {
 
   /* ELEMENTS */
   .name {
-    position: relative;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    word-spacing: 2px;
-    font-weight: 300;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
   }
 
   .score {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .current {

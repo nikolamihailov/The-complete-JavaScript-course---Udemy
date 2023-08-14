@@ -27,6 +27,7 @@ closeRulesBtn.addEventListener("click", closeRules);
 function rollingDice() {
     const diceNum = Math.floor(Math.random() * 6) + 1;
     dice.src = `./dices/dice-${diceNum}.png`;
+    dice.classList.remove('hidden');
     if (diceNum !== 1) {
         if (currentPlayer === 1) {
             scoreP1 += diceNum;
@@ -99,6 +100,7 @@ function newGame() {
     totalScoreP2.textContent = totalSP2;
     rollDiceBtn.disabled = false;
     holdBtn.disabled = false;
+    dice.classList.add('hidden');
     if (!playerOneSection.classList.contains("player--active")) {
         playerTwoSection.classList.remove("player--active");
         playerOneSection.classList.add("player--active");
