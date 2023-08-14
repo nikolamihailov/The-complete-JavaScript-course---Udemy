@@ -38,19 +38,16 @@ function rollingDice() {
         }
     } else {
         if (currentPlayer === 1) {
-            currentPlayer = 2;
             scoreP1 = 0;
             currentScoreP1.textContent = scoreP1;
-            playerOneSection.classList.remove("player--active");
-            playerTwoSection.classList.add("player--active");
+            switchPlayer(currentPlayer);
+            currentPlayer = 2;
         } else {
-            currentPlayer = 1;
             scoreP2 = 0;
             currentScoreP2.textContent = scoreP2;
-            playerOneSection.classList.add("player--active");
-            playerTwoSection.classList.remove("player--active");
+            switchPlayer(currentPlayer);
+            currentPlayer = 1;
         }
-        turn.textContent = currentPlayer;
     }
 }
 
@@ -66,8 +63,7 @@ function holdScore() {
             holdBtn.disabled = true;
             return;
         }
-        playerOneSection.classList.remove("player--active");
-        playerTwoSection.classList.add("player--active");
+        switchPlayer(currentPlayer);
         currentPlayer = 2;
     } else {
         totalSP2 += scoreP2;
@@ -80,11 +76,9 @@ function holdScore() {
             holdBtn.disabled = true;
             return;
         }
-        playerTwoSection.classList.remove("player--active");
-        playerOneSection.classList.add("player--active");
+        switchPlayer(currentPlayer);
         currentPlayer = 1;
     }
-    turn.textContent = currentPlayer;
 }
 
 function newGame() {
@@ -105,12 +99,21 @@ function newGame() {
         playerTwoSection.classList.remove("player--active");
         playerOneSection.classList.add("player--active");
     }
-    if (playerOneSection.classList.contains("player--winner")) playerOneSection.classList.remove("player--winner");
-    if (playerTwoSection.classList.contains("player--winner")) playerOneSection.classList.remove("player--winner");
+    removeWInner();
 }
 
 function checkWinner(playerTurn) {
     let haveWinner = false;
     if ((playerTurn === 1 && totalSP1 >= 100) || (playerTurn === 2 && totalSP2 >= 100)) haveWinner = true;
     return haveWinner;
+}
+
+function switchPlayer(currentPlayer) {
+    playerOneSection.classList.toggle("player--active");
+    playerTwoSection.classList.toggle("player--active");
+    currentPlayer == 1 ? turn.textContent = 2 : turn.textContent = 1;
+}
+function removeWInner() {
+    playerOneSection.classList.remove("player--winner");
+    playerOneSection.classList.remove("player--winner");
 }
