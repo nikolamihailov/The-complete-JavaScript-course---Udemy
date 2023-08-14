@@ -14,15 +14,17 @@
   <body>
     <h1 class="message">Player's <span class="turn">1</span> turn:</h1>
     <div class="rules hidden">
-      <p>
-        <strong style="font-size: 25px;">Rules:</strong><br><br>
+      <div>
+        <strong style="font-size: 25px">Rules:</strong><br /><br />
         <ul>
-            <li> click roll to roll the dice and get a number between 1-6</li>
-            <li> if you roll the dice and get a one, your current score becomes 0</li>
-            <li> if you click hold, the current score is added to your total</li>
-            <li> first person to reach 100 wins</li>
+          <li>click roll to roll the dice and get a number between 1-6</li>
+          <li>
+            if you roll the dice and get a one, your current score becomes 0
+          </li>
+          <li>if you click hold, the current score is added to your total</li>
+          <li>first person to reach 100 wins</li>
         </ul>
-      </p>
+      </div>
       <button class="close-rules">&times;</button>
     </div>
     <main>
@@ -42,14 +44,15 @@
           <p class="current-score" id="current--1">0</p>
         </div>
       </section>
-
-      <img src="./dices/dice-1.png" alt="Playing dice" class="dice" />
-      <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--info">
-        Info <i class="fa fa-info-circle"></i>
-      </button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <section class="btns-dice">
+        <button class="btn btn--new">🔄 New game</button>
+        <button class="btn btn--info">
+          Info <i class="fa fa-info-circle"></i>
+        </button>
+        <img src="./dices/dice-1.png" alt="Playing dice" class="dice" />
+        <button class="btn btn--roll">🎲 Roll dice</button>
+        <button class="btn btn--hold">📥 Hold</button>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>
