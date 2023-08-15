@@ -12,6 +12,7 @@ let currentPlayer = 1;
 const dice = document.querySelector(".dice");
 const rules = document.querySelector(".rules");
 const closeRulesBtn = document.querySelector(".close-rules");
+const message = document.querySelector(".message");
 
 const openRules = () => rules.classList.remove("hidden");
 const closeRules = () => rules.classList.add("hidden");
@@ -26,8 +27,8 @@ closeRulesBtn.addEventListener("click", closeRules);
 
 function rollingDice() {
     const diceNum = Math.floor(Math.random() * 6) + 1;
-    dice.src = `./dices/dice-${diceNum}.png`;
     dice.classList.remove('hidden');
+    dice.src = `./dices/dice-${diceNum}.png`;
     if (diceNum !== 1) {
         if (currentPlayer === 1) {
             scoreP1 += diceNum;
@@ -58,6 +59,7 @@ function holdScore() {
         currentScoreP1.textContent = scoreP1;
         totalScoreP1.textContent = totalSP1;
         if (checkWinner(currentPlayer)) {
+            message.textContent = `Player ${currentPlayer} wins !!!`;
             playerOneSection.classList.add("player--winner");
             rollDiceBtn.disabled = true;
             holdBtn.disabled = true;
@@ -71,6 +73,7 @@ function holdScore() {
         currentScoreP2.textContent = scoreP2;
         totalScoreP2.textContent = totalSP2;
         if (checkWinner(currentPlayer)) {
+            message.textContent = `Player ${currentPlayer} wins !!!`;
             playerTwoSection.classList.add("player--winner");
             rollDiceBtn.disabled = true;
             holdBtn.disabled = true;
@@ -83,7 +86,6 @@ function holdScore() {
 
 function newGame() {
     currentPlayer = 1;
-    turn.textContent = 1;
     scoreP1 = 0;
     scoreP2 = 0;
     totalSP1 = 0;
@@ -94,6 +96,7 @@ function newGame() {
     totalScoreP2.textContent = totalSP2;
     rollDiceBtn.disabled = false;
     holdBtn.disabled = false;
+    message.innerHTML = `Player's <span class="turn">${currentPlayer}</span> turn:`;
     dice.classList.add('hidden');
     if (!playerOneSection.classList.contains("player--active")) {
         playerTwoSection.classList.remove("player--active");
@@ -115,5 +118,5 @@ function switchPlayer(currentPlayer) {
 }
 function removeWInner() {
     playerOneSection.classList.remove("player--winner");
-    playerOneSection.classList.remove("player--winner");
+    playerTwoSection.classList.remove("player--winner");
 }
