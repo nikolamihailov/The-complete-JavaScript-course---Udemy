@@ -51,7 +51,6 @@ const { odds: { team1, x: draw, team2 } } = game;
 const printGoals = function (...players) {
     console.log(`Total scored goals - ${players.length}:`);
     players.forEach(p => console.log(p));
-
 };
 
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');

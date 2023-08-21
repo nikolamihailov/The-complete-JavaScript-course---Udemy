@@ -41,8 +41,8 @@ const game = {
     },
 };
 
-// solution
 
+// solution
 for (const [idx, goalScorer] of game.scored.entries()) {
     console.log(`Goal ${idx + 1}: ${goalScorer}`);
 }
