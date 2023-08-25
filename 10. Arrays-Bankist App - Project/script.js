@@ -69,3 +69,61 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+const displayMovements = function (movements) {
+    containerMovements.innerHTML = "";
+
+    movements.forEach((mov, idx) => {
+        const type = mov > 0 ? "deposit" : "withdrawal";
+        const movementRow = `
+         <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${idx + 1} ${type}</div>
+          <div class="movements__value">${mov}€</div>
+        </div>
+        `;
+        containerMovements.insertAdjacentHTML("afterbegin", movementRow);
+    });
+};
+displayMovements(account1.movements);
+
+
+const createUsernames = function (accounts) {
+    accounts.forEach(function (acc) {
+        acc.username = acc.owner
+            .toLowerCase()
+            .split(' ')
+            .map(name => name[0])
+            .join('');
+    });
+};
+createUsernames(accounts);
+
+const calcAndDisplayBalance = function (movements) {
+    const balance = movements.reduce((acc, cur) => acc + cur, 0);
+    labelBalance.textContent = `${balance} EUR`;
+};
+
+calcAndDisplayBalance(account1.movements);
+
+
+const calcDisplaySummary = function (acc) {
+    const incomes = acc.movements
+        .filter(mov => mov > 0)
+        .reduce((acc, mov) => acc + mov, 0);
+    labelSumIn.textContent = `${incomes}€`;
+
+    const out = acc.movements
+        .filter(mov => mov < 0)
+        .reduce((acc, mov) => acc + mov, 0);
+    labelSumOut.textContent = `${Math.abs(out)}€`;
+
+    const interest = acc.movements
+        .filter(mov => mov > 0)
+        .map(deposit => (deposit * acc.interestRate) / 100)
+        .filter((int, i, arr) => int >= 1)
+        .reduce((acc, int) => acc + int, 0);
+    labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1);
+
+
+
