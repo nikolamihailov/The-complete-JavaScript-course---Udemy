@@ -2,7 +2,16 @@
 
 # Projects (from newest to oldest):
 
-1.  ## Dice game
+1.  ## Bank App(In progress)
+
+    ### Description:
+    Demo accounts: [usernme: "js", pin: 1111], [usernme: "jd", pin: 2222]
+    ### Features:
+
+    ### Live Demo:
+
+     [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://k-bank-app.netlify.app/)
+2.  ## Dice game
 
     ### Description:
 
@@ -20,7 +29,7 @@
 
      [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://roll-the-dice-game-k.netlify.app)
 
-2.  ## Modal window
+3.  ## Modal window
 
     ### Description:
 
@@ -37,7 +46,7 @@
 
     [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://koleto-modal-window.netlify.app/)
 
-3.  ## Guess the number game
+4.  ## Guess the number game
 
     ### Description:
 
