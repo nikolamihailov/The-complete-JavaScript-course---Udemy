@@ -31,13 +31,16 @@
           type="text"
           placeholder="user"
           class="login__input login__input--user"
+          required
         />
         <!-- In practice, use type="password" -->
         <input
-          type="text"
+          type="number"
           placeholder="PIN"
           maxlength="4"
+          min="0"
           class="login__input login__input--pin"
+          required
         />
         <button class="login__btn">&rarr;</button>
       </form>
@@ -164,5 +167,6 @@
     </footer> -->
 
     <script src="script.js"></script>
+    <script src="challenges.js"></script>
   </body>
 </html>
