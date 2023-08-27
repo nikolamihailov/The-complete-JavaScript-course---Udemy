@@ -6,17 +6,52 @@
 
 // Data
 const account1 = {
-    owner: 'Jonas Schmedtmann',
-    movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+    owner: "Jonas Schmedtmann",
+    movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
     interestRate: 1.2, // %
     pin: 1111,
+    movementsInfo: [
+        { type: 'deposit', date: '2019-11-18T21:31:17.178Z' },
+        { type: 'deposit', date: '2019-12-23T07:42:02.383Z' },
+        { type: 'payment', date: '2020-01-28T09:15:04.904Z' },
+        { type: 'deposit', date: '2020-04-01T10:17:24.185Z' },
+        { type: 'withdrawal', date: '2020-05-08T14:11:59.604Z' },
+        { type: 'payment', date: '2020-07-26T17:01:17.194Z' },
+        { type: 'deposit', date: '2020-07-28T23:36:17.929Z' },
+        { type: 'transfer', date: '2020-08-01T10:51:36.790Z' }
+    ],
+    /*movementsDates: [
+        "2019-11-18T21:31:17.178Z",
+        "2019-12-23T07:42:02.383Z",
+        "2020-01-28T09:15:04.904Z",
+        "2020-04-01T10:17:24.185Z",
+        "2020-05-08T14:11:59.604Z",
+        "2020-07-26T17:01:17.194Z",
+        "2020-07-28T23:36:17.929Z",
+        "2020-08-01T10:51:36.790Z",
+    ],*/
+    currency: "EUR",
+    locale: "pt-PT", // de-DE
 };
 
 const account2 = {
-    owner: 'Jessica Davis',
+    owner: "Jessica Davis",
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
     pin: 2222,
+
+    movementsDates: [
+        "2019-11-01T13:15:33.035Z",
+        "2019-11-30T09:48:16.867Z",
+        "2019-12-25T06:04:23.907Z",
+        "2020-01-25T14:18:46.235Z",
+        "2020-02-05T16:33:06.386Z",
+        "2020-04-10T14:43:26.374Z",
+        "2020-06-25T18:49:59.371Z",
+        "2020-07-26T12:01:20.894Z",
+    ],
+    currency: "USD",
+    locale: "en-US",
 };
 
 const account3 = {
@@ -72,13 +107,21 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const displayMovements = function (account, sorted = false) {
     containerMovements.innerHTML = "";
 
-    const movs = sorted ? [...account.movements].sort((a, b) => a - b) : account.movements;
+    const movs = sorted ? [...account.movements].sort((a, b) => a.amount - b.amount) : account.movements;
     movs.forEach((mov, idx) => {
-        const type = mov > 0 ? "deposit" : "withdrawal";
+
+        const d = new Date(account.movementsInfo[idx].date);
+        const day = `${d.getDate()}`.padStart(2, 0);
+        const month = `${d.getMonth() + 1}`.padStart(2, 0);
+        const year = d.getFullYear();
+
+        const displayDate = `${day}/${month}/${year}`;
+
         const movementRow = `
          <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${idx + 1} ${type}</div>
-          <div class="movements__value">${mov}€</div>
+          <div class="movements__type movements__type--${account.movementsInfo[idx].type}">${account.movementsInfo[idx].type}</div>
+          <div class="movements__date">${displayDate}</div>
+          <div class="movements__value">${mov.toFixed(2)}€</div>
         </div>
         `;
         containerMovements.insertAdjacentHTML("afterbegin", movementRow);
@@ -100,7 +143,7 @@ createUsernames(accounts);
 
 const calcAndDisplayBalance = function (account) {
     const balance = account.movements.reduce((acc, cur) => acc + cur, 0);
-    labelBalance.textContent = `${balance} €`;
+    labelBalance.textContent = `${balance.toFixed(2)} €`;
     account.balance = balance;
 };
 
@@ -134,7 +177,13 @@ function updateUI(account) {
 }
 // login
 
+
 let currentUser;
+//FAKE ALWAYS LOGGED IN
+currentUser = account1;
+updateUI(currentUser);
+containerApp.style.opacity = 1;
+
 
 btnLogin.addEventListener("click", function (e) {
     e.preventDefault();
@@ -147,6 +196,7 @@ btnLogin.addEventListener("click", function (e) {
         inputLoginUsername.value = inputLoginPin.value = "";
         inputLoginPin.blur();
         updateUI(currentUser);
+
         containerApp.style.opacity = "1";
     } else alert("Invalid username or password!");
 });
@@ -160,7 +210,9 @@ btnTransfer.addEventListener("click", function (e) {
     if (receiver && receiver?.username !== currentUser.username) {
         if (amount > 0 && currentUser.balance > amount) {
             currentUser.movements.push(-amount);
+            currentUser.movementsDates.push(new Date().toISOString());
             receiver.movements.push(amount);
+            receiver.movementsDates.push(new Date().toISOString());
             updateUI(currentUser);
             alert(`Money successfuly transfered to ${receiver.owner}!`);
         } else alert("Negative amount / You dont have enough money!");
@@ -170,12 +222,12 @@ btnTransfer.addEventListener("click", function (e) {
 
 btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
-    const amount = Number(inputLoanAmount.value);
+    const amount = Math.floor(inputLoanAmount.value);
 
     if (amount > 0 && currentUser.movements.some(mov => mov >= amount * 0.1)) {
         // Add movement
         currentUser.movements.push(amount);
-
+        currentUser.movementsDates.push(new Date().toISOString());
         // Update UI
         updateUI(currentUser);
     }
@@ -200,8 +252,17 @@ btnClose.addEventListener("click", function (e) {
 let sortedMovs = false;
 btnSort.addEventListener("click", () => {
     displayMovements(currentUser, !sortedMovs);
-    sortedMovs = true;
+    sortedMovs = !sortedMovs;
 });
+/*
+labelBalance.addEventListener('click', function () {
+    [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+        // 0, 2, 4, 6
+        if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+        // 0, 3, 6, 9
+        if (i % 3 === 0) row.style.backgroundColor = 'blue';
+    });
+});*/
 
 
 

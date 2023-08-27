@@ -20,12 +20,12 @@ body {
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 2rem;
 }
@@ -92,7 +92,7 @@ nav {
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
-
+  height: 100vh;
   /* NOTE This creates the fade in/out anumation */
   opacity: 0;
   transition: all 1s;
@@ -127,7 +127,7 @@ nav {
   grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .movements__row {
@@ -162,7 +162,24 @@ nav {
   );
 }
 
-.movements__type--withdrawal {
+.movements__type--transfer {
+  background-image: linear-gradient(
+    to top left,
+    #4f9df7,
+    #2029db
+  );
+}
+
+.movements__type--loan {
+  background-image: linear-gradient(
+    to top left,
+    #ffb003,
+    #ffcb03
+  );
+}
+
+.movements__type--withdrawal,
+.movements__type--payment {
   background-image: linear-gradient(
     to top left,
     #e52a5a,
@@ -181,7 +198,7 @@ nav {
   display: flex;
   align-items: baseline;
   padding: 0 0.3rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .summary__label {
@@ -217,23 +234,23 @@ nav {
 /* OPERATIONS */
 .operation {
   border-radius: 1rem;
-  padding: 3rem 4rem;
+  padding: 2rem 3rem;
   color: #333;
 }
 
 .operation--transfer {
   background-image: linear-gradient(
-    to top left,
-    #ffb003,
-    #ffcb03
+    to right,
+    #4f9df7,
+    #2029db
   );
 }
 
 .operation--loan {
   background-image: linear-gradient(
     to top left,
-    #39b385,
-    #9be15d
+    #ffb003,
+    #ffcb03
   );
 }
 
@@ -287,6 +304,7 @@ h2 {
 }
 
 .form__label {
+  font-weight: bold;
   font-size: 1.3rem;
   text-align: center;
 }
