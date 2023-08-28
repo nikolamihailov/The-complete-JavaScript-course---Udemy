@@ -5,7 +5,7 @@
 1.  ## Bank App(In progress)
 
     ### Description:
-    Demo accounts: [usernme: "js", pin: 1111], [usernme: "jd", pin: 2222]
+    Demo accounts: [usernаme: "nm", pin: 1111], [userndme: "jd", pin: 2222], [userndme: "ms", pin: 3333]
     ### Features:
 
     ### Live Demo:
