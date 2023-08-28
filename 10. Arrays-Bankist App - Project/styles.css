@@ -20,7 +20,7 @@ body {
   color: #444;
   background-color: #f3f3f3;
   height: 100vh;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 nav {
@@ -54,7 +54,7 @@ nav {
   margin-right: 1rem;
   color: inherit;
   border: 1px solid #fff;
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
 
 .login__input:focus {
@@ -166,7 +166,7 @@ nav {
   background-image: linear-gradient(
     to top left,
     #4f9df7,
-    #2029db
+    #4148d1
   );
 }
 
