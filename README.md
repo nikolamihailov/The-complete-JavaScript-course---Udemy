@@ -2,11 +2,20 @@
 
 # Projects (from newest to oldest):
 
-1.  ## Bank App(In progress)
+1.  ## Bankist Website
+
+    ### Description:
+    Bankist website using tab components, lazy loading images, custom slider, sticky navbar and Intersection Observer API. (Not responsive!)
+
+    ### Live Demo:
+
+     [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://k-bankist.netlify.app/)
+    
+2.  ## Bank App
 
     ### Description:
     Bank app that shows account history of transfers, payments, deposits, withdrawals and loans. The project uses the Intl API and shows the money amounts and the dates according to the country of the account. The data      is static. The first demo account is with levs, second dollars and third euros. When you make a transfer from one profile to another the amount is changed. For example 10 euros become 19.50 levs.
-    Demo accounts: [usernаme: "nm", pin: 1111], [userndme: "jd", pin: 2222], [userndme: "ms", pin: 3333]
+    Demo accounts: [usernаme: "nm", pin: 1111], [userndme: "jd", pin: 2222], [userndme: "ms", pin: 3333] (Not responsive!)
     
     ### Features:
     - login
