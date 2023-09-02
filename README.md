@@ -2,7 +2,23 @@
 
 # Projects (from newest to oldest):
 
-1.  ## Bankist Website
+1.  ## Mapty
+
+    ### Description:
+    Mapty project for tracking workouts of type cycling/running. Uses Leaflet library, GeoLocation API and OOP architecture. The workouts are saved in the localStorage.
+
+    ### Features:
+    - get user current location and display it on load
+    - display map with workouts
+    - add a workout when clicking on the map
+    - show all workouts in the sidebar
+    - move the map to workout when clicked over it
+    - saving workouts to localstorage and displaying them on reload
+
+    ### Live Demo:
+
+     [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://mapty-k.netlify.app/)
+2.  ## Bankist Website
 
     ### Description:
     Bankist website using tab components, lazy loading images, custom slider, sticky navbar and Intersection Observer API. (Not responsive!)
@@ -11,7 +27,7 @@
 
      [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://k-bankist.netlify.app/)
     
-2.  ## Bank App
+3.  ## Bank App
 
     ### Description:
     Bank app that shows account history of transfers, payments, deposits, withdrawals and loans. The project uses the Intl API and shows the money amounts and the dates according to the country of the account. The data      is static. The first demo account is with levs, second dollars and third euros. When you make a transfer from one profile to another the amount is changed. For example 10 euros become 19.50 levs.
@@ -28,7 +44,7 @@
     ### Live Demo:
 
      [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://k-bank-app.netlify.app/)
-3.  ## Dice game
+4.  ## Dice game
 
     ### Description:
 
@@ -46,7 +62,7 @@
 
      [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://roll-the-dice-game-k.netlify.app)
 
-4.  ## Modal window
+5.  ## Modal window
 
     ### Description:
 
@@ -63,7 +79,7 @@
 
     [<img alt="Play Button" src="https://user-images.githubusercontent.com/114406139/211439129-37c7a037-dde4-49d6-bf62-4ffc4f315fa9.PNG" />](https://koleto-modal-window.netlify.app/)
 
-5.  ## Guess the number game
+6.  ## Guess the number game
 
     ### Description:
 
