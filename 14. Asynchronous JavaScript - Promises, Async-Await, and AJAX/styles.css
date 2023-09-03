@@ -13,8 +13,9 @@ body {
   font-family: system-ui;
   color: #555;
   background-color: #f7f7f7;
-  min-height: 100vh;
-
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
