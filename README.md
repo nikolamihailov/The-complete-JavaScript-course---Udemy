@@ -5,7 +5,7 @@
 1.  ## Mapty
 
     ### Description:
-    Mapty project for tracking workouts of type cycling/running. Uses Leaflet library, GeoLocation API and OOP architecture. The workouts are saved in the localStorage.
+    Mapty project for tracking workouts of type cycling/running. Uses Leaflet library, GeoLocation API and OOP architecture with classes. The workouts are saved in the localStorage.
 
     ### Features:
     - get user current location and display it on load
