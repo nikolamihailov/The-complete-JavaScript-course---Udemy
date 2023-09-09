@@ -66,7 +66,7 @@
 
     ### Description:
 
-    Popup modal window that shows and hides. Working with both buttons and keys.
+    Pop-up modal window that shows and hides. Working with both buttons and keys.
 
     ### Features:
 
