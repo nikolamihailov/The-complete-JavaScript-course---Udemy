@@ -48,7 +48,7 @@
 
     ### Description:
 
-    Roll the dice game with 2 players. The aim of the game is to reach a total of 100 points before the other player. The player rolls the dice and if they get 1 their current score becomes 0 and is turn of the opponent. If you choose to hold you add your current score to the total and is turn of the opponent. 
+    Roll the dice game with two players. The aim of the game is to reach a total of 100 points before the other player. The player rolls the dice and if they get 1 their current score becomes 0 and is turn of the opponent. If you choose to hold you add your current score to the total and is turn of the opponent. 
 
     ### Features:
 
